@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wanshu.sys.mapper.SysRoleMapper">
+
+    <select id="checkRoleCanDelete" resultType="java.lang.Integer">
+        SELECT  COUNT(1)
+        FROM sys_user_role s1 ,sys_role_menu s2
+        WHERE s1.role_id = #{roleId} OR s2.role_id = #{roleId}
+    </select>
+    <select id="queryByUserId" resultType="com.wanshu.sys.entity.SysRole">
+        SELECT *
+        FROM sys_role s
+        WHERE s.role_id IN (
+            SELECT role_id
+            FROM sys_user_role s2
+            WHERE s2.user_id = #{userId}
+        )
+    </select>
+</mapper>

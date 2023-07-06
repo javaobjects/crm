@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 婉舒CRM系统
+  profiles:
+    active: dev
