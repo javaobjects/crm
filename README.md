@@ -1,5 +1,5 @@
 <p align="center">
-    <a href='https://docs.oracle.com/en/java/javase/8'><img alt="Java 8" src="./inc/readme/Java8.png"></a>
+    <a href='https://docs.oracle.com/en/java/javase/8'><img alt="Java 8" src="readme/Java8.png"></a>
     <a href='https://docs.spring.io/spring-boot/docs/2.6.2-SNAPSHOT/reference/html'><img alt="Spring Boot 2" src="https://img.shields.io/badge/Spring%20Boot%202-%23000000.svg?logo=springboot"></a>
     <a href='https://staging-cn.vuejs.org'><img alt="Vue 3" src="https://img.shields.io/badge/Vue%202%20-%232b3847.svg?logo=vue.js"></a><br/>
     <a href='#'><img alt="Github stars" src="https://img.shields.io/github/stars/201206030/novel?logo=github"></a>
@@ -54,79 +54,76 @@
 #### 包的结构
 ```
 +- crm
-|   +- crm.sql
-|   +- crm_sb
-|   |   +- .gitignore
-|   |   +- .mvn
-|   |   |   +- wrapper
-|   |   +- HELP.md
-|   |   +- mvnw
-|   |   +- mvnw.cmd
-|   |   +- pom.xml
-|   |   +- src
-|   |   |   +- main
-|   |   |   |   +- java
-|   |   |   |   |   +- com
-|   |   |   |   |   |   +- wanshu
-|   |   |   |   |   |   |   +- common
-|   |   |   |   |   |   |   |   +- annotation
-|   |   |   |   |   |   |   |   +- aspect
-|   |   |   |   |   |   |   |   +- constant
-|   |   |   |   |   |   |   |   +- execption
-|   |   |   |   |   |   |   |   +- model
-|   |   |   |   |   |   |   |   +- result
-|   |   |   |   |   |   |   |   +- swagger
-|   |   |   |   |   |   |   |   +- util
-|   |   |   |   |   |   |   +- config
-|   |   |   |   |   |   |   +- sys
-|   |   |   |   |   |   |   |   +- controller
-|   |   |   |   |   |   |   |   +- entity
-|   |   |   |   |   |   |   |   +- filter
-|   |   |   |   |   |   |   |   +- mapper
-|   |   |   |   |   |   |   |   +- model
-|   |   |   |   |   |   |   |   +- service
-|   |   |   |   |   |   |   |   |   +- impl
-|   |   |   |   |   |   |   +- WscrmApplication.java
-|   |   |   +- test
-|   |   |   |   +- java
-|   |   |   |   |   +- com
-|   |   |   |   |   |   +- wanshu
-|   |   |   |   |   |   |   +- WscrmApplicationTests.java
-|   |   +- WSCRM.iml
-|   +- crm_vue
-|   |   +- .babelrc
-|   |   +- .editorconfig
-|   |   +- .gitignore
-|   |   +- .postcssrc.js
-|   |   +- build
-|   |   +- config
-|   |   +- dist
-|   |   |   +- index.html
-|   |   |   +- static
-|   |   |   |   +- css
-|   |   |   |   +- fonts
-|   |   |   |   +- js
-|   |   +- index.html
-|   |   +- package-lock.json
-|   |   +- package.json
-|   |   +- src
-|   |   |   +- App.vue
-|   |   |   +- assets
-|   |   |   |   +- images
-|   |   |   |   +- login_bg.jpg
-|   |   |   |   +- logo.png
-|   |   |   +- components
-|   |   |   |   +- common
-|   |   |   |   +- pages
-|   |   |   |   |   +- customer
-|   |   |   |   |   +- order
-|   |   |   |   |   +- sys
-|   |   |   +- main.js
-|   |   |   +- router
-|   |   |   +- store
-|   |   |   +- views
-|   |   +- static
-|   |   |   +- .gitkeep
+|   +- crm.sql -- 后端系统的数据库文件，用于创建和初始化数据库。
+|   +- crm_sb -- 后端 Spring Boot 项目的文件夹，包括了 Spring Boot 项目的代码和配置文件，以及一些工具类和依赖库。
+|   |   +- .gitignore -- 用于指定 Git 版本控制系统忽略的文件或目录。
+|   |   +- .mvn -- Maven Wrapper 相关的配置文件和脚本。
+|   |   |   +- wrapper -- 用于下载和管理 Maven Wrapper 的相关文件。
+|   |   +- HELP.md -- 包含了项目的帮助文档和使用说明
+|   |   +- mvnw -- Maven Wrapper 的脚本文件，用于在不安装 Maven 的情况下构建项目
+|   |   +- mvnw.cmd -- Maven Wrapper 的脚本文件，用于在不安装 Maven 的情况下构建项目
+|   |   +- pom.xml -- Maven 项目的配置文件，包括了项目的依赖库和构建配置等。
+|   |   +- src -- 项目的源代码目录
+|   |   |   +- main 
+|   |   |   |   +- java 
+|   |   |   |   |   +- com 
+|   |   |   |   |   |   +- wanshu 
+|   |   |   |   |   |   |   +- common -- 通用模块，包括了一些通用的注解、切面、常量、异常、模型、结果等。
+|   |   |   |   |   |   |   |   +- annotation -- 自定义注解模块，包括了一些自定义注解
+|   |   |   |   |   |   |   |   +- aspect -- 切面模块，包括了一些切面类。
+|   |   |   |   |   |   |   |   +- constant -- 常量模块，包括了一些常量类。
+|   |   |   |   |   |   |   |   +- execption -- 异常模块，包括了一些异常类。
+|   |   |   |   |   |   |   |   +- model -- 模型模块，包括了一些通用的模型类。
+|   |   |   |   |   |   |   |   +- result -- 结果模块，包括了一些通用的结果类。
+|   |   |   |   |   |   |   |   +- swagger -- Swagger 模块，包括了一些 Swagger 相关的配置类和注
+|   |   |   |   |   |   |   |   +- util -- 工具模块，包括了一些通用的工具类。
+|   |   |   |   |   |   |   +- config -- 配置模块，包括了一些配置类。
+|   |   |   |   |   |   |   +- sys -- 系统模块，包括了一些系统相关的控制器、实体、过滤器、映射器、模型、服务等
+|   |   |   |   |   |   |   |   +- controller -- 控制器模块，包括了一些系统相关的控制器类。
+|   |   |   |   |   |   |   |   +- entity -- 实体模块，包括了一些系统相关的实体类。
+|   |   |   |   |   |   |   |   +- filter -- 过滤器模块，包括了一些系统相关的过滤器类。
+|   |   |   |   |   |   |   |   +- mapper -- 映射器模块，包括了一些系统相关的映射器接口。
+|   |   |   |   |   |   |   |   +- model -- 模型模块，包括了一些系统相关的模型类。
+|   |   |   |   |   |   |   |   +- service -- 服务模块，包括了一些系统相关的服务接口。
+|   |   |   |   |   |   |   |   |   +- impl -- 服务实现模块，包括了一些系统相关的服务实现类
+|   |   |   |   |   |   |   +- WscrmApplication.java -- Spring Boot 应用程序的入口类。
+|   |   |   +- test -- 测试代码目录
+|   |   |   |   +- java 
+|   |   |   |   |   +- com 
+|   |   |   |   |   |   +- wanshu 
+|   |   |   |   |   |   |   +- WscrmApplicationTests.java -- 测试代码目录
+|   |   +- WSCRM.iml -- IntelliJ IDEA 项目文件。
+|   +- crm_vue -- 前端系统的 Vue.js 项目文件夹，包括了 Vue.js 项目的源代码和静态资源文件等
+|   |   +- .babelrc -- Babel 配置文件，用于将 ES6+ 代码转换为 ES5 代码以兼容旧版浏览器。
+|   |   +- .editorconfig -- 编辑器配置文件，用于统一不同编辑器的代码风格和格式化规则等。
+|   |   +- .gitignore -- 用于指定 Git 版本控制系统忽略的文件或目录。
+|   |   +- .postcssrc.js -- PostCSS 配置文件，用于处理 CSS 样式。
+|   |   +- build -- 构建脚本和配置文件目录
+|   |   +- config -- 开发环境和生产环境的配置文件目录
+|   |   +- dist -- 打包后生成的目标代码目录。
+|   |   |   +- index.html -- Vue.js 应用程序的入口 HTML 文件。
+|   |   |   +- static -- 静态资源文件目录，包括了 CSS 样式、字体、JavaScript 脚本等
+|   |   |   |   +- css 
+|   |   |   |   +- fonts 
+|   |   |   |   +- js 
+|   |   +- index.html -- npm 包管理器的锁定文件，用于锁定依赖库的版本号以保证构建环境的稳定性。
+|   |   +- package-lock.json -- npm 包管理器的锁定文件，用于锁定依赖库的版本号以保证构建环境的稳定性。
+|   |   +- package.json -- npm 包管理器的配置文件，包括了项目的依赖库和构建配置等
+|   |   +- src -- Vue.js 应用程序的源代码目录。
+|   |   |   +- App.vue -- Vue.js 应用程序的根组件，包括了应用程序的路由和布局等
+|   |   |   +- assets -- 应用程序的资源文件目录，包括了图片、字体等资源文件
+|   |   |   +- components -- Vue.js 应用程序的组件目录，包括了通用组件和页面组件等
+|   |   |   |   +- common -- 通用组件目录，包括了一些通用组件如头部、底部、菜单等
+|   |   |   |   +- pages -- 页面组件目录，包括了一些页面组件如客户、订单、系统等页面组件。
+|   |   |   |   |   +- customer 
+|   |   |   |   |   +- order 
+|   |   |   |   |   +- sys 
+|   |   |   +- main.js -- Vue.js 应用程序的入口 JavaScript 文件，主要作为生产环境下的入口文件。
+|   |   |   +- router -- Vue.js 应用程序的路由配置目录，包括了应用程序的路由配置信息
+|   |   |   +- store -- Vue.js 应用程序的状态管理目录，包括了应用程序的状态管理信息。
+|   |   |   +- views -- Vue.js 应用程序的视图目录，包括了一些视图组件如登录页、首页等视图组件。
+|   |   +- static -- 静态资源文件目录，主要作为开发环境下的静态资源文件目录。
+|   |   |   +- .gitkeep -- 空文件，用于确保 Git 版本控制系统能够正确地跟踪该目录。
 |   +- README.md -- 项目说明
 ```
 
