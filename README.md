@@ -8,7 +8,6 @@
     <a href='#'><img alt="Gitee forks" src="https://gitee.com/novel_dev_team/novel/badge/fork.svg?theme=gitee"></a>
 </p>
 
-
 # CRM系统
 
 #### 开发环境
@@ -193,18 +192,17 @@ npm run lint
 ```
 + 如下图所示
 
-![](./inc/readme/1.png)
-![](./inc/readme/2.png)
-![](./inc/readme/3.png)
-![](./inc/readme/4.png)
-![](./inc/readme/5.png)
+![](readme/1.png)
+![](readme/2.png)
+![](readme/3.png)
+![](readme/4.png)
+![](readme/5.png)
 
 #### 登录账户
-用户名：admin
-密码：1
+
++ 用户名 / 密码：admin / 123456
+
 #### 截图
-![登录](./inc/readme/登录.png)
-![增删改查](./inc/readme/增删改查列表.png)
-![用户管理](./inc/readme/用户管理.png)
-![角色管理](./inc/readme/角色管理.png)
-![系统菜单](./inc/readme/系统菜单.png)
+![登录](readme/login.png)
+![](readme/index.png)
+![](readme/table.png)
